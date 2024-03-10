@@ -32,20 +32,38 @@ import Logo from "./Logo.astro";
 
     <div id="menu-backdrop" 
     class={`absolute bg-black/5 backdrop-blur-lg rounded
-    left-[--left] top[var(--top)]
+    left-[var(--left)] top[var(--top)]
     w-[var(--width)] h-[var(--height)]
-    transition-all duration-300
-    ease-in-out
+    transition-all duration-500
+    ease-in-out opacity-10
     `}
     />
 </header>
 <script>
-    const listItem = document.querySelector("#landing-header li")
-    const menuBackdrop = document.querySelector('#menu-backdrop') as HTMLElement
+    const listItem = document.querySelectorAll("#Landing-header li")
+    const menuBackdrop = document.querySelector("#menu-backdrop") as HTMLElement
+    
+    listItem.forEach((item) => {
+        item.addEventListener("mouseenter", () => {
+            const {left, top, width, height } = item.getBoundingClientRect()
+            const { clientHeight, clientWidth } = item
+            
+            console.log({ left, top , width, height})
+            console.log({ clientHeight, clientWidth})
 
-    // listItem.forEach((item) => {
-        
-    // })
+            menuBackdrop.style.setProperty("--left", ` ${left}px`)
+            menuBackdrop.style.setProperty("--top", `${top}px`)
+            menuBackdrop.style.setProperty("--width", `${width}px`)
+            menuBackdrop.style.setProperty("--height", `${height}px`)
+            menuBackdrop.style.opacity = "1"
+            menuBackdrop.style.visibility = "visible"
+        })
+
+        item.addEventListener("mouseleave", ()=>{
+            menuBackdrop.style.opacity = "0"
+            menuBackdrop.style.visibility = "hidden"
+        })
+    })
 </script>
 
 <script>
