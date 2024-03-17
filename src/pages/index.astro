@@ -3,12 +3,14 @@ import Layout from '../layouts/Layout.astro';
 import LandingHeader from '../components/LandingHeader.astro';
 import HeroSection from '../components/HeroSection.astro';
 import ChargeSection from '../components/ChargeSection.astro';
+import HeroSection2 from '../components/HeroSection2.astro';
+import Section from '../components/Section.astro';
 ---
 
 <Layout title="Tesla car innovation">
 	
 	<LandingHeader />
-		
+	
 	<main class="snap-y snap-mandatory relative w-full h-screen overflow-auto scroll-smooth">
 		<div class="snap-center">
 			<HeroSection />
@@ -17,7 +19,7 @@ import ChargeSection from '../components/ChargeSection.astro';
 			<ChargeSection />
 		</div>
 		<div class="snap-center">
-			<ChargeSection />
+			<HeroSection2 />
 		</div>
 		<div class="snap-center">
 			<ChargeSection />

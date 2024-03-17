@@ -2,7 +2,7 @@
 import Logo from "./Logo.astro";
 ---
 
-<header id="Landing-header"
+<header id="landing-header"
     class="py=3 px-10 flex items-center fixed top-0 w-full justify-between z-40 text-black">
     <div class="flex flex-grow basis-0">
         <header>
@@ -41,7 +41,7 @@ import Logo from "./Logo.astro";
     />
 </header>
 <script>
-    const listItem = document.querySelectorAll("#Landing-header li")
+    const listItem = document.querySelectorAll("#landing-header li")
     const menuBackdrop = document.querySelector("#menu-backdrop") as HTMLElement
     
     listItem.forEach((item) => {
@@ -68,7 +68,7 @@ import Logo from "./Logo.astro";
 </script>
 
 <script>
-    const $header = document.querySelector('#Landing-header') as HTMLElement
+    const $header = document.querySelector('#landing-header') as HTMLElement
     const observerOptions = {
         root: null,
         rootMargin: '0px', //en cunato se vea el elemento
